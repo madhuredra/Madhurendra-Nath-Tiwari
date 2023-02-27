@@ -568,12 +568,15 @@ body{
 @media screen and (max-width:768px) {
     #gallery{
         margin-top: 50vh;
-        background-color: red;
         height: calc(200px * 5 + 200px);
     }  
     .images-container{
-        margin-top: 90vh;
+        margin-top: 10vh;
     } 
+    .images-container img{
+        width: 150px;
+        height: 150px;
+    }
 }
 .images-container img:hover{
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
