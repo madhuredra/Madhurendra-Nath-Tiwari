@@ -611,3 +611,8 @@ body{
     text-decoration: none;
     font-weight: 800;
 }
+@media screen and (max-width:768px) {
+    .footer{
+        margin-top: 100px;
+    }
+}
