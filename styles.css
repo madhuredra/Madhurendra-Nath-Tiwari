@@ -613,6 +613,7 @@ body{
 }
 @media screen and (max-width:768px) {
     .footer{
-        margin-top: 100px;
+        background-color: var(--maximum-yellow-red_a10);
+        margin-top: 300px;
     }
 }
