@@ -37,7 +37,6 @@ body{
     scroll-behavior:smooth;
 }
 .navbar{
-    position: fixed;
     /* background-color: red; */
     background-color: var(--maximum-yellow-red_a10);
     display: flex;
@@ -81,7 +80,7 @@ body{
     border-bottom: 2px solid orangered;
 }
 .animation{
-    animation: bounce 1s ease infinite;
+    animation: bounce 1s ease 3s infinite;
 }
 .A{
     animation: bounce 1s ease infinite .1s;
@@ -128,7 +127,7 @@ body{
     justify-content: space-evenly;
     align-items: center;
     /* margin-top: -1000px; */
-    animation: comeFromTop 3s ease-in 1s 1;
+    animation: comeFromTop 3s ease-in 0s 1;
     
 }
 @keyframes comeFromTop {
@@ -137,6 +136,8 @@ body{
     }
     25%{
         margin-top: -600px;
+        transform: rotate(-40deg);
+        
     }
     50%{
         margin-top: -300px;
@@ -159,6 +160,31 @@ body{
     transform: rotate(45deg);
     border-radius: var(--radius-50);
     z-index: -1;
+}
+@keyframes comeFromLeft {
+    0% {
+        margin-left: -1200px;
+    }
+    25% {
+        margin-left: -600px;
+
+    }
+    50% {
+        margin-left: -300px;
+    }
+    100% {
+        margin-left: 0px;
+    }
+
+}
+.quotes,.name1{
+    animation: comeFromLeft 3s ease-in 2s 1;
+}
+.section .buttons a{
+    animation: comeFromTop 3s ease-in 2s 1;
+}
+.section .image{
+    animation: comeFromTop 3s ease-in 1s 1;
 }
 .section .image img{
     cursor: pointer;
@@ -263,8 +289,7 @@ body{
     }
     .hero {
         position: relative;
-
-        background-color: var(--maximum-yellow-red_a10);
+        background-color: var(--orange-red_a20);
         padding-block-start: calc(var(--section-padding) + 60px);
         text-align: center;
         overflow: hidden;
@@ -313,11 +338,53 @@ body{
         height: 300px;       
     }
 }
+@keyframes comeFromBottom {
+    0% {
+        margin-top: 2000px;
+    }
 
+    25% {
+        margin-top: 1000px;
+        transform: rotate(-40deg);
+
+    }
+
+    50% {
+        margin-top: 500px;
+        transform: rotate(45deg);
+    }
+
+    100% {
+        margin-top: 0px;
+    }
+
+}
+@keyframes comeFromRight {
+    0% {
+        margin-left: 2000px;
+    }
+
+    25% {
+        margin-left: 1000px;
+        transform: rotate(-40deg);
+
+    }
+
+    50% {
+        margin-left: 500px;
+        transform: rotate(45deg);
+    }
+
+    100% {
+        margin-left: 0px;
+    }
+
+}
 #about{
     width: 100vw;
     height: 100vh;
     background-color: var(--maximum-yellow-red_a10);
+    animation: comeFromBottom 4s ease-in 0s 1;
 }
 .about{
     width: 100vw;
@@ -326,7 +393,10 @@ body{
     justify-content: space-evenly;
     align-items: center;    
     /* background-color: blue; */
-    animation: comeFromLeft 4s ease-in 4s 1;
+    /* animation: comeFromLeft 4s ease-in 4s 1; */
+}
+.about-img{
+    animation: comeFromTop 4s ease-in 0s 1;
 }
 @keyframes comeFromLeft {
     0%{
@@ -355,6 +425,7 @@ body{
     -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
     filter: grayscale(0%);
     transition: 1s;
+    border-radius: 70%;
 }
 .about-heading{
     text-align: center;
@@ -372,6 +443,7 @@ body{
     justify-content: center;
     align-content: center;
     width: 50vw;
+    animation: comeFromRight 4s ease-in 4s 1;
     /* background-color: red; */
 }
 .about-detail{
@@ -415,6 +487,7 @@ body{
 
 #contact{
     height: 100vh;
+    background-color: var(--maximum-yellow-red_a10);
 }
 .form-style-3{
 	width: 40vw;
@@ -515,8 +588,9 @@ body{
     height: 90vh;
 }
 .contact-img img{
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 550px;
+    animation: comeFromRight 4s ease-in 0s 1;
 }
 .contact-text{
     text-align: center;
@@ -548,18 +622,20 @@ body{
 #gallery{
     background-color: var(--maximum-yellow-red_a10);
     height: 100vh;
+    animation: comeFromLeft 4s ease-in 0s 1;
 }
 .gallery-heading{
     text-align: center;
 }
 .gallery{
     width: 100vw;
-    height: 100vh;
+    height: 85vh;
 }
 .images-container img{
     width: 200px;
     height: 200px;
     cursor: pointer;
+    border-radius: 10px;
 }
 .gallery{
     display: flex;
@@ -571,16 +647,9 @@ body{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 10px 10px;
+    gap: 20px 20px;
 }
 @media screen and (max-width:768px) {
-    #gallery{
-        margin-top: 20vh;
-        height: calc(200px * 4);
-    }  
-    .images-container{
-        margin-top: 15vh;
-    } 
     .images-container img{
         width: 150px;
         height: 150px;
@@ -589,8 +658,12 @@ body{
 .images-container img:hover{
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);
+    transform: scale(1.1);
+    transition: 1s;
 }
-
+.images-container img{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
 .footer{
     display: flex;
     justify-content: space-evenly;
